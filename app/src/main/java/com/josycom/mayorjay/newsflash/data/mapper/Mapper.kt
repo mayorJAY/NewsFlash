@@ -9,6 +9,7 @@ fun ArticleRemote.toDomain(): Article {
         description = this.description ?: "",
         content = this.content ?: "",
         date = this.publishedAt ?: "",
+        url = this.url ?: "",
         imageUrl = this.urlToImage ?: "",
     )
 }

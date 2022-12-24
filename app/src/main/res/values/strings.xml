@@ -8,4 +8,6 @@
     <string name="warning">Warning</string>
     <string name="do_you_want_to_logout">Do you want to logout?</string>
     <string name="logout">Log Out</string>
+    <string name="retry">Retry</string>
+    <string name="network_error_message">%s. \nTap on the image below to retry</string>
 </resources>
