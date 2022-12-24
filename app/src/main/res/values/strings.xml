@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">NewsFlash</string>
+    <string name="biometric_login">Biometric Login</string>
+    <string name="sign_in_with_biometrics">Sign in with Biometrics</string>
+    <string name="login_succeeded">Login succeeded!</string>
+    <string name="cancel">Cancel</string>
+    <string name="fingerprint_not_enabled">Fingerprint not enabled in Settings</string>
+    <string name="warning">Warning</string>
+    <string name="do_you_want_to_logout">Do you want to logout?</string>
+    <string name="logout">Log Out</string>
+</resources>
