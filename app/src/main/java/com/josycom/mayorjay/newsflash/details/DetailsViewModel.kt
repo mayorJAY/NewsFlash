@@ -8,5 +8,5 @@ class DetailsViewModel : ViewModel() {
 
     private var article: MutableLiveData<Article> = MutableLiveData()
     fun getArticle(): MutableLiveData<Article> = article
-    fun setArticle(article: Article?){ this.article.value = article }
+    fun setArticle(article: Article?) { this.article.value = article }
 }

@@ -57,8 +57,7 @@ class OverviewFragment : Fragment() {
         binding.rvNews.apply {
             layoutManager = LinearLayoutManager(context)
             itemAnimator = DefaultItemAnimator()
-            adapter =
-                newsAdapter.withLoadStateFooter(PagingLoadStateAdapter { newsAdapter.retry() })
+            adapter = newsAdapter.withLoadStateFooter(PagingLoadStateAdapter { newsAdapter.retry() })
         }
 
         viewLifecycleOwner.lifecycleScope.launch {
@@ -98,7 +97,7 @@ class OverviewFragment : Fragment() {
 
         viewLifecycleOwner.lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
-                viewModel.newsPagingFlow.collectLatest { data ->
+                viewModel.getNewsPagingFlow().collectLatest { data ->
                     newsAdapter.submitData(data)
                 }
             }
