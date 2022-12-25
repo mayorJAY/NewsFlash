@@ -6,7 +6,7 @@ import androidx.core.view.isVisible
 import androidx.paging.LoadState
 import androidx.paging.LoadStateAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.josycom.mayorjay.newsflash.databinding.PagingLoadStateFooterViewItemBinding
+import com.josycom.mayorjay.newsflash.databinding.PagingLoadStateFooterItemViewBinding
 
 class PagingLoadStateAdapter(private val retry: () -> Unit) :
     LoadStateAdapter<PagingLoadStateAdapter.PagingLoadStateViewHolder>() {
@@ -15,7 +15,7 @@ class PagingLoadStateAdapter(private val retry: () -> Unit) :
         parent: ViewGroup,
         loadState: LoadState
     ): PagingLoadStateViewHolder {
-        val binding = PagingLoadStateFooterViewItemBinding.inflate(
+        val binding = PagingLoadStateFooterItemViewBinding.inflate(
             LayoutInflater.from(parent.context)
         )
         return PagingLoadStateViewHolder(binding, retry)
@@ -26,7 +26,7 @@ class PagingLoadStateAdapter(private val retry: () -> Unit) :
     }
 
     class PagingLoadStateViewHolder(
-        private val binding: PagingLoadStateFooterViewItemBinding,
+        private val binding: PagingLoadStateFooterItemViewBinding,
         private val retry: () -> Unit
     ) : RecyclerView.ViewHolder(binding.root) {
 
@@ -35,11 +35,12 @@ class PagingLoadStateAdapter(private val retry: () -> Unit) :
         }
 
         fun bind(loadState: LoadState) {
-            binding.pbFooter.isVisible = loadState is LoadState.Loading
-            binding.btRetry.isVisible = loadState is LoadState.Error
-            binding.tvErrorMsg.isVisible = loadState is LoadState.Error
-            binding.tvErrorMsg.text =
-                if (loadState is LoadState.Error) loadState.error.message else ""
+            binding.apply {
+                pbFooter.isVisible = loadState is LoadState.Loading
+                btRetry.isVisible = loadState is LoadState.Error
+                tvErrorMsg.isVisible = loadState is LoadState.Error
+                tvErrorMsg.text = if (loadState is LoadState.Error) loadState.error.message else ""
+            }
         }
     }
 }

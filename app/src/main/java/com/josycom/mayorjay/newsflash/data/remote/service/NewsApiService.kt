@@ -8,9 +8,9 @@ import retrofit2.http.Query
 interface NewsApiService {
 
     @GET(Constants.TOP_HEADLINES_ENDPOINT)
-    fun getTopHeadlines(
-        @Query("sources") source: String,
+    suspend fun getTopHeadlines(
         @Query("apiKey") apiKey: String,
+        @Query("sources") source: String,
         @Query("pageSize") pageSize: Int,
         @Query("page") page: Int
     ): NewsResponse

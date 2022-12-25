@@ -5,8 +5,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.activity.OnBackPressedCallback
-import androidx.appcompat.app.AlertDialog
 import androidx.core.content.res.ResourcesCompat
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
@@ -16,14 +14,19 @@ import androidx.lifecycle.repeatOnLifecycle
 import androidx.paging.LoadState
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.josycom.mayorjay.newsflash.BuildConfig
 import com.josycom.mayorjay.newsflash.R
 import com.josycom.mayorjay.newsflash.data.domain.Article
 import com.josycom.mayorjay.newsflash.databinding.FragmentOverviewBinding
-import com.josycom.mayorjay.newsflash.login.LoginFragment
+import com.josycom.mayorjay.newsflash.details.DetailsFragment
+import com.josycom.mayorjay.newsflash.util.Constants
+import com.josycom.mayorjay.newsflash.util.getModifiedNewsSource
 import com.josycom.mayorjay.newsflash.util.switchFragment
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
+@AndroidEntryPoint
 class OverviewFragment : Fragment() {
 
     private lateinit var binding: FragmentOverviewBinding
@@ -41,8 +44,13 @@ class OverviewFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        initView()
         fetchAndDisplayNewsHeadlines()
         setupListener()
+    }
+
+    private fun initView() {
+        binding.tvHeader.text = BuildConfig.SOURCE_NAME.getModifiedNewsSource(getString(R.string.news))
     }
 
     private fun fetchAndDisplayNewsHeadlines() {
@@ -90,7 +98,9 @@ class OverviewFragment : Fragment() {
 
         viewLifecycleOwner.lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
-                viewModel.newsPagingFlow.collectLatest { data -> newsAdapter.submitData(data) }
+                viewModel.newsPagingFlow.collectLatest { data ->
+                    newsAdapter.submitData(data)
+                }
             }
         }
     }
@@ -99,28 +109,10 @@ class OverviewFragment : Fragment() {
         binding.ivStatus.setOnClickListener {
             newsAdapter.retry()
         }
-
-        requireActivity().onBackPressedDispatcher.addCallback(
-            viewLifecycleOwner,
-            object : OnBackPressedCallback(true) {
-                override fun handleOnBackPressed() {
-                    performLogout()
-                }
-            })
     }
 
-    private fun onArticleSelected(article: Article) {}
-
-    fun performLogout() {
-        AlertDialog.Builder(requireContext()).apply {
-            setTitle(getString(R.string.warning))
-            setMessage(getString(R.string.do_you_want_to_logout))
-            setNegativeButton(getString(R.string.cancel)) { _, _ -> }
-            setPositiveButton(getString(R.string.logout)) { _, _ ->
-                switchFragment(LoginFragment(), null, false)
-            }
-            show()
-        }
+    private fun onArticleSelected(article: Article) {
+        val arg = Bundle().apply { putSerializable(Constants.ARTICLE_KEY, article) }
+        switchFragment(DetailsFragment(), arg, true)
     }
-
 }

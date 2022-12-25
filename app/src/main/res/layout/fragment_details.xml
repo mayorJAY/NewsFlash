@@ -1,13 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".details.DetailsFragment">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hello" />
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
-</FrameLayout>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline1"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintGuide_percent="0.03"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_percent="0.97"/>
+
+    <ImageView
+        android:id="@+id/iv_article_image"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_100sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:scaleType="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guideline1"
+        app:layout_constraintEnd_toEndOf="@id/guideline2"
+        android:contentDescription="@string/article_image"/>
+
+    <TextView
+        android:id="@+id/tv_article_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/_14ssp"
+        app:layout_constraintStart_toStartOf="@id/guideline1"
+        app:layout_constraintEnd_toEndOf="@id/guideline2"
+        app:layout_constraintTop_toBottomOf="@id/iv_article_image"
+        tools:text="News Title shows here"/>
+
+    <TextView
+        android:id="@+id/tv_article_date"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/_8ssp"
+        app:layout_constraintStart_toStartOf="@id/guideline1"
+        app:layout_constraintEnd_toEndOf="@id/guideline2"
+        app:layout_constraintTop_toBottomOf="@id/tv_article_title"
+        tools:text="News Date shows here"/>
+
+    <TextView
+        android:id="@+id/tv_article_desc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/_12ssp"
+        android:textStyle="italic"
+        app:layout_constraintStart_toStartOf="@id/guideline1"
+        app:layout_constraintEnd_toEndOf="@id/guideline2"
+        app:layout_constraintTop_toBottomOf="@id/tv_article_date"
+        tools:text="News Description shows here"/>
+
+    <TextView
+        android:id="@+id/tv_article_content"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintStart_toStartOf="@id/guideline1"
+        app:layout_constraintEnd_toEndOf="@id/guideline2"
+        app:layout_constraintTop_toBottomOf="@id/tv_article_desc"
+        tools:text="News content shows here"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/bt_read_more"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/read_more"
+        android:textAllCaps="false"
+        android:layout_marginTop="@dimen/_2sdp"
+        app:layout_constraintTop_toBottomOf="@id/tv_article_content"
+        app:layout_constraintStart_toStartOf="@id/guideline1"
+        app:layout_constraintEnd_toEndOf="@id/guideline2"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

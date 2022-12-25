@@ -36,6 +36,7 @@ class LoginFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        switchFragment(OverviewFragment(), null, false)
         val isSupported = isBiometricSupported()
         if (isSupported == null) {
             switchFragment(OverviewFragment(), null, false)
@@ -45,7 +46,10 @@ class LoginFragment : Fragment() {
         if (!isSupported) return
 
         initBiometricsAuth()
+        setupListener()
+    }
 
+    private fun setupListener() {
         binding.btLogin.setOnClickListener {
             biometricPrompt.authenticate(promptInfo)
         }

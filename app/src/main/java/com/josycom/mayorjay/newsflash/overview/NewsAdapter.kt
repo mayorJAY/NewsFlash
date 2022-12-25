@@ -6,12 +6,13 @@ import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.josycom.mayorjay.newsflash.data.domain.Article
-import com.josycom.mayorjay.newsflash.databinding.NewsItemLayoutBinding
+import com.josycom.mayorjay.newsflash.databinding.NewsItemViewBinding
+import com.josycom.mayorjay.newsflash.util.displayImage
 
 class NewsAdapter(private val onArticleSelected: (article: Article) -> Unit) : PagingDataAdapter<Article, NewsAdapter.NewsViewHolder>(DiffUtilCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewsViewHolder {
-        val binding = NewsItemLayoutBinding.inflate(LayoutInflater.from(parent.context))
+        val binding = NewsItemViewBinding.inflate(LayoutInflater.from(parent.context))
         return NewsViewHolder(binding)
     }
 
@@ -28,8 +29,14 @@ class NewsAdapter(private val onArticleSelected: (article: Article) -> Unit) : P
         override fun areContentsTheSame(oldItem: Article, newItem: Article) = oldItem == newItem
     }
 
-    class NewsViewHolder(binding: NewsItemLayoutBinding) : RecyclerView.ViewHolder(binding.root) {
+    class NewsViewHolder(private val binding: NewsItemViewBinding) : RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(article: Article) {}
+        fun bind(article: Article) {
+            binding.apply {
+                ivArticleImage.displayImage(article.imageUrl)
+                tvArticleTitle.text = article.title
+                tvArticleDate.text = article.date
+            }
+        }
     }
 }

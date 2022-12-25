@@ -11,11 +11,11 @@ import java.io.IOException
 import javax.inject.Inject
 
 class NewsPagingSource @Inject constructor(
-    private val sourceId: String,
-    private val apiKey: String,
     private val apiService: NewsApiService,
-    private val firstPage: Int,
-    private val pageSize: Int
+    private val apiKey: String,
+    private val sourceId: String,
+    private val pageSize: Int,
+    private val firstPage: Int
 ) : PagingSource<Int, Article>() {
 
     override fun getRefreshKey(state: PagingState<Int, Article>): Int? {
@@ -29,18 +29,14 @@ class NewsPagingSource @Inject constructor(
         val page = params.key ?: firstPage
         return try {
             val response = apiService.getTopHeadlines(
-                sourceId,
                 apiKey,
+                sourceId,
                 pageSize,
                 page
             )
             if (Constants.OK.equals(response.status, true)) {
                 val articles = response.articles.map { articleRemote -> articleRemote.toDomain() }
-                val nextKey = if (articles.isEmpty()) {
-                    null
-                } else {
-                    page + (params.loadSize / pageSize)
-                }
+                val nextKey = if (articles.isEmpty()) null else page + (params.loadSize / pageSize)
                 LoadResult.Page(
                     data = articles,
                     prevKey = if (page == firstPage) null else page - 1,

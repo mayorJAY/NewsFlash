@@ -22,11 +22,11 @@ class NewsRepository @Inject constructor(private val apiService: NewsApiService)
         ),
             pagingSourceFactory = {
                 NewsPagingSource(
-                    BuildConfig.SOURCE_ID,
-                    BuildConfig.API_KEY,
                     apiService,
-                    Constants.FIRST_PAGE,
-                    Constants.PAGE_SIZE
+                    BuildConfig.API_KEY,
+                    BuildConfig.SOURCE_ID,
+                    Constants.PAGE_SIZE,
+                    Constants.FIRST_PAGE
                 )
             }).flow
     }
