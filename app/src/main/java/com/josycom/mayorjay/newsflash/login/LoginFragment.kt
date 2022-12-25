@@ -36,7 +36,7 @@ class LoginFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val isSupported = isBiometricSupported()
+        val isSupported = isBiometricsSupported()
         if (isSupported == null) {
             switchFragment(OverviewFragment(), null, false)
             return
@@ -52,6 +52,17 @@ class LoginFragment : Fragment() {
         binding.btLogin.setOnClickListener {
             biometricPrompt.authenticate(promptInfo)
         }
+    }
+
+    private fun isBiometricsSupported(): Boolean? {
+        val keyguardManager = requireContext().getSystemService(Context.KEYGUARD_SERVICE) as KeyguardManager
+        if (!keyguardManager.isKeyguardSecure) {
+            showToast(getString(R.string.fingerprint_not_enabled))
+            return false
+        }
+
+        return if (requireContext().packageManager.hasSystemFeature(PackageManager.FEATURE_FINGERPRINT))
+            true else null
     }
 
     private fun initBiometricsAuth() {
@@ -73,21 +84,4 @@ class LoginFragment : Fragment() {
 
         biometricPrompt.authenticate(promptInfo)
     }
-
-    private fun isBiometricSupported(): Boolean? {
-        val keyguardManager = requireContext().getSystemService(Context.KEYGUARD_SERVICE) as KeyguardManager
-        if (!keyguardManager.isKeyguardSecure) {
-            showToast(getString(R.string.fingerprint_not_enabled))
-            return false
-        }
-
-//        if (ActivityCompat.checkSelfPermission(requireContext(), android.Manifest.permission.USE_BIOMETRIC) != PackageManager.PERMISSION_GRANTED) {
-//            showToast("Fingerprint Permission not granted")
-//            return false
-//        }
-
-        return if (requireContext().packageManager.hasSystemFeature(PackageManager.FEATURE_FINGERPRINT))
-            true else null
-    }
-
 }

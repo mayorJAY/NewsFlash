@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.josycom.mayorjay.newsflash">
 
-<!--    <uses-permission android:name="android.permission.USE_BIOMETRIC"/>-->
     <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
