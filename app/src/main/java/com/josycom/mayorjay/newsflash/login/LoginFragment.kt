@@ -77,7 +77,7 @@ class LoginFragment : Fragment() {
         })
 
         promptInfo = BiometricPrompt.PromptInfo.Builder()
-            .setTitle(getString(R.string.biometric_login))
+            .setTitle(getString(R.string.fingerprint_login))
             .setNegativeButtonText(getString(R.string.cancel))
             .build()
 

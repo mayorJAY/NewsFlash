@@ -31,6 +31,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_2sdp"
+        android:layout_marginStart="@dimen/_2sdp"
         android:textSize="@dimen/_12ssp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toEndOf="@id/guideline1"
@@ -41,6 +42,7 @@
         android:id="@+id/tv_article_date"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_2sdp"
         android:textSize="@dimen/_8ssp"
         app:layout_constraintTop_toBottomOf="@id/tv_article_title"
         app:layout_constraintStart_toEndOf="@id/guideline1"
@@ -49,8 +51,8 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#dadada"
+        android:layout_height="@dimen/_1dp"
+        android:background="@color/line_color"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

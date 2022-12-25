@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">NewsFlash</string>
-    <string name="biometric_login">Biometric Login</string>
-    <string name="login_with_biometrics">Login with Biometrics</string>
+    <string name="fingerprint_login">Fingerprint Login</string>
+    <string name="login_with_fingerprint">Login with Fingerprint</string>
     <string name="login_succeeded">Login succeeded!</string>
     <string name="cancel">Cancel</string>
     <string name="fingerprint_not_enabled">Fingerprint not enabled in Settings</string>
