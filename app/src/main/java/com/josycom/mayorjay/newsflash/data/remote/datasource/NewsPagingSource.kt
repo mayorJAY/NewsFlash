@@ -35,7 +35,7 @@ class NewsPagingSource @Inject constructor(
                 page
             )
             if (Constants.OK.equals(response.status, true)) {
-                val articles = response.articles.map { articleRemote -> articleRemote.toDomain() }
+                val articles = (response.articles ?: emptyList()).map { articleRemote -> articleRemote.toDomain() }
                 val nextKey = if (articles.isEmpty()) null else page + (params.loadSize / pageSize)
                 LoadResult.Page(
                     data = articles,
@@ -48,6 +48,9 @@ class NewsPagingSource @Inject constructor(
         } catch (exception: IOException) {
             LoadResult.Error(exception)
         } catch (exception: HttpException) {
+            if (exception.response()?.code() == 401) {
+                return LoadResult.Error(Throwable(message = "Your API key is invalid or incorrect. Check your key, or go to https://newsapi.org to create a free API key."))
+            }
             LoadResult.Error(exception)
         }
     }

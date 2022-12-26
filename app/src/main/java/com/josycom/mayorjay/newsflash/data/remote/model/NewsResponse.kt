@@ -1,7 +1,7 @@
 package com.josycom.mayorjay.newsflash.data.remote.model
 
 data class NewsResponse(
-    val articles: List<ArticleRemote>,
+    val articles: List<ArticleRemote>?,
     val status: String?,
     val code: String?,
     val message: String?,
