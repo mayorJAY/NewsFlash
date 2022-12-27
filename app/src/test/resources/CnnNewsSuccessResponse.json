@@ -1,0 +1,136 @@
+{
+  "status": "ok",
+  "totalResults": 10,
+  "articles": [
+    {
+      "source": {
+        "id": "cnn",
+        "name": "CNN"
+      },
+      "author": "Hannah Sarisohn",
+      "title": "City of Jackson, Mississippi, issues boil water notice as cold weather likely caused breaks in the troubled system",
+      "description": "The city of Jackson, Mississippi, has issued a citywide boil water notice as the troubled system lost pressure due to line breaks likely caused by the weather, according to a statement from the city.",
+      "url": "http://us.cnn.com/2022/12/26/us/jackson-mississippi-boil-water-notice/index.html",
+      "urlToImage": "https://media.cnn.com/api/v1/images/stellar/prod/221226084608-jackson-water-tower-file-083122.jpg?c=16x9&q=w_800,c_fill",
+      "publishedAt": "2022-12-26T14:00:39Z",
+      "content": "The city of Jackson, Mississippi, has issued a citywide boil water notice as the troubled system lost pressure due to line breaks likely caused by the weather, according to a statement from the city.… [+1632 chars]"
+    },
+    {
+      "source": {
+        "id": "cnn",
+        "name": "CNN"
+      },
+      "author": "",
+      "title": "See latest forecast as winter storm barrels through the US | CNN",
+      "description": "CNN meteorologist Chad Myers details the latest forecast as a deadly winter storm continues to blast much of the US with brutal winter weather.",
+      "url": "http://us.cnn.com/videos/weather/2022/12/26/winter-storm-snow-after-christmas-weekend-update-vpx.cnn",
+      "urlToImage": "https://media.cnn.com/api/v1/images/stellar/prod/221226063807-chad-myers-5a-weather-update-thumb-vpx.jpg?c=16x9&q=w_800,c_fill",
+      "publishedAt": "2022-12-26T11:50:13Z",
+      "content": null
+    },
+    {
+      "source": {
+        "id": "cnn",
+        "name": "CNN"
+      },
+      "author": "By Chris Boyette and Forrest Brown, CNN",
+      "title": "Over 1,300 US flights canceled the day after Christmas",
+      "description": "In the wake of dangerously cold temperatures and winter weather across the nation, air transportation cancellations and delays continue to impact travelers the day after Christmas.",
+      "url": "http://us.cnn.com/travel/article/flight-cancellations-christmas-2022-winter-storm/index.html",
+      "urlToImage": "https://cdn.cnn.com/cnnnext/dam/assets/221226052441-01-detroit-airport-weather-super-tease.jpg",
+      "publishedAt": "2022-12-26T11:01:04Z",
+      "content": "Chris Boyette and Forrest Brown, CNNUpdated 26th December 2022\r\n(CNN) In the wake of dangerously cold temperatures and winter weather across the nation, air transportation cancellations and delays co… [+1203 chars]"
+    },
+    {
+      "source": {
+        "id": "cnn",
+        "name": "CNN"
+      },
+      "author": "Nouran Salahieh",
+      "title": "Winter storm leaves at least 37 dead nationwide as residents in western New York remain trapped under feet of snow",
+      "description": "As a massive winter storm continues to blast much of the US with brutal winter weather -- leading to at least 37 deaths nationwide -- parts of western New York have been buried by up to 43 inches of snow, leaving vehicles stuck and power out for thousands dur…",
+      "url": "http://us.cnn.com/2022/12/26/weather/arctic-winter-storm-new-york-blizzard-monday/index.html",
+      "urlToImage": "https://media.cnn.com/api/v1/images/stellar/prod/221226133001-03-winter-weather-ny.jpg?c=16x9&q=w_800,c_fill",
+      "publishedAt": "2022-12-26T06:51:14Z",
+      "content": "As a massive winter storm continues to blast much of the US with brutal winter weather leading to at least 37 deaths nationwide parts of western New York have been buried by up to 43 inches of snow, … [+6730 chars]"
+    },
+    {
+      "source": {
+        "id": "cnn",
+        "name": "CNN"
+      },
+      "author": "Sharif Paget",
+      "title": "Around 14,000 customers impacted after substations in Tacoma area vandalized by burglars",
+      "description": "Around 14,000 customers in Puyallup and Graham, Washington, were impacted Sunday after burglars vandalized three power substations belonging to Tacoma Public Utilities and Puget Sound Energy, police said.",
+      "url": "http://us.cnn.com/2022/12/25/us/tacoma-washington-substations-vandalized/index.html",
+      "urlToImage": "https://media.cnn.com/api/v1/images/stellar/prod/221225173743-tacoma-power-lost-map.jpg?c=16x9&q=w_800,c_fill",
+      "publishedAt": "2022-12-26T01:37:43Z",
+      "content": "Around 14,000 customers in Puyallup and Graham, Washington, were impacted Sunday after burglars vandalized three power substations belonging to Tacoma Public Utilities and Puget Sound Energy, police … [+1619 chars]"
+    },
+    {
+      "source": {
+        "id": "cnn",
+        "name": "CNN"
+      },
+      "author": "Jacob Lev",
+      "title": "Kathy Whitworth, the winningest golfer in history, dies at 83",
+      "description": "Kathy Whitworth, the winningest golfer in history, has died at the age of 83, the Ladies Professional Golf Association announced on Sunday.",
+      "url": "http://us.cnn.com/2022/12/25/golf/kathy-whitworth-golf-obituary/index.html",
+      "urlToImage": "https://media.cnn.com/api/v1/images/stellar/prod/221225173740-kathy-whitworth-file.jpg?c=16x9&q=w_800,c_fill",
+      "publishedAt": "2022-12-25T23:42:06Z",
+      "content": "Kathy Whitworth, the winningest golfer in history, has died at the age of 83, the Ladies Professional Golf Association announced on Sunday.\r\nWhitworth died suddenly Saturday night while celebrating C… [+1163 chars]"
+    },
+    {
+      "source": {
+        "id": "cnn",
+        "name": "CNN"
+      },
+      "author": "Artemis Moshtaghian, Nicole Grether",
+      "title": "A Buffalo family who became stranded in blizzard conditions got to spend Christmas at firefighters’ firehouse",
+      "description": "When the blizzard first hit Buffalo, New York, a family of six packed up their bags and headed to a local hotel after they lost power at their home -- but they ended up celebrating Christmas somewhere a little more surprising.",
+      "url": "http://us.cnn.com/2022/12/25/us/buffalo-blizzard-stranded-family-firehouse/index.html",
+      "urlToImage": "https://media.cnn.com/api/v1/images/stellar/prod/221225150700-01-buffalo-family-firehouse-christmas.jpg?c=16x9&q=w_800,c_fill",
+      "publishedAt": "2022-12-25T22:16:47Z",
+      "content": "When the blizzard first hit Buffalo, New York, a family of six packed up their bags and headed to a local hotel after they lost power at their home but they ended up celebrating Christmas somewhere a… [+1721 chars]"
+    },
+    {
+      "source": {
+        "id": "cnn",
+        "name": "CNN"
+      },
+      "author": "Sahar Akbarzai, AnneClaire Stapleton",
+      "title": "All 10 people feared missing in Austria avalanche found alive",
+      "description": "All of the people feared missing after an avalanche Sunday near the mountainous villages of Lech and Zurs in Austria have been found alive, according to the Austrian Press Agency (APA).",
+      "url": "http://us.cnn.com/2022/12/25/europe/austria-avalanche-lech-zurs/index.html",
+      "urlToImage": "https://media.cnn.com/api/v1/images/stellar/prod/221225133312-01-austria-avalanche-122522.jpg?c=16x9&q=w_800,c_fill",
+      "publishedAt": "2022-12-25T18:31:39Z",
+      "content": "All of the people feared missing after an avalanche Sunday near the mountainous villages of Lech and Zurs in Austria have been found alive, according to the Austrian Press Agency (APA).\r\nFour have be… [+690 chars]"
+    },
+    {
+      "source": {
+        "id": "cnn",
+        "name": "CNN"
+      },
+      "author": null,
+      "title": "In pictures: Winter storm impacts the US",
+      "description": "Produced by CNN Digital's Photo Team",
+      "url": "http://us.cnn.com/2022/12/22/weather/gallery/winter-storm-december-2022/index.html",
+      "urlToImage": "https://media.cnn.com/api/v1/images/stellar/prod/221223134114-09-winter-weather-1223-ohio.jpg?c=16x9&q=w_800,c_fill",
+      "publishedAt": "2022-12-22T16:57:28Z",
+      "content": "Produced by CNN Digital's Photo Team\r\nA major winter storm blasting much of the central and eastern United States is bringing record-breaking temperature drops and harsh snowy conditions that have re… [+317 chars]"
+    },
+    {
+      "source": {
+        "id": "cnn",
+        "name": "CNN"
+      },
+      "author": "Ashley Vaughan",
+      "title": "5 ways you can help those facing homelessness in the cold",
+      "description": "A major winter storm will have more than 100 million people in the US under winter weather alerts this Christmas weekend.",
+      "url": "http://us.cnn.com/2021/02/20/us/ways-to-help-those-facing-homelessness-in-the-cold-iyw-trnd/index.html",
+      "urlToImage": "https://media.cnn.com/api/v1/images/stellar/prod/160122224846-winter-storm.jpg?q=x_0,y_142,h_1688,w_3000,c_crop/w_800",
+      "publishedAt": "2021-02-20T08:09:25Z",
+      "content": "A major winter storm will have more than 100 million people in the US under winter weather alerts this Christmas weekend. \r\nBut for those who call city streets home, heading inside is not always an o… [+4725 chars]"
+    }
+  ]
+}
