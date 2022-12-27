@@ -40,7 +40,7 @@ Minimum API level is set to 21, this means NewsFlash can run on approximately 98
 
 ## Installation
 
-You will need an API key from [News API](https://newsapi.org/). In your project's root directory, inside the `local.properties` file include the following line:
+You will need an API key from [News API](https://newsapi.org/). In your project's root directory, inside the `local.properties` file, include the following line:
 
 ````
 api.key="YOUR_API_KEY"
