@@ -1,13 +1,11 @@
 package com.josycom.mayorjay.newsflash.login
 
-import android.app.KeyguardManager
-import android.content.Context
-import android.content.pm.PackageManager
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.biometric.BiometricManager
 import androidx.biometric.BiometricPrompt
 import androidx.core.content.ContextCompat
 import com.josycom.mayorjay.newsflash.R
@@ -35,13 +33,11 @@ class LoginFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val isSupported = isBiometricsSupported()
-        if (isSupported == null) {
+        val canAuthenticate = isBiometricsSupported()
+        if (!canAuthenticate) {
             switchFragment(OverviewFragment(), null, false)
             return
         }
-
-        if (!isSupported) return
 
         initBiometricsAuth()
         setupListener()
@@ -53,16 +49,7 @@ class LoginFragment : Fragment() {
         }
     }
 
-    private fun isBiometricsSupported(): Boolean? {
-        val keyguardManager = requireContext().getSystemService(Context.KEYGUARD_SERVICE) as KeyguardManager
-        if (!keyguardManager.isKeyguardSecure) {
-            showToast(getString(R.string.fingerprint_not_enabled))
-            return false
-        }
-
-        return if (requireContext().packageManager.hasSystemFeature(PackageManager.FEATURE_FINGERPRINT))
-            true else null
-    }
+    private fun isBiometricsSupported() = BiometricManager.from(requireContext()).canAuthenticate(BiometricManager.Authenticators.BIOMETRIC_WEAK) == BiometricManager.BIOMETRIC_SUCCESS
 
     private fun initBiometricsAuth() {
         executor = ContextCompat.getMainExecutor(requireContext())

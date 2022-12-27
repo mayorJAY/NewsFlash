@@ -4,7 +4,6 @@
     <string name="login_with_fingerprint">Login with Fingerprint</string>
     <string name="login_succeeded">Login succeeded!</string>
     <string name="cancel">Cancel</string>
-    <string name="fingerprint_not_enabled">Fingerprint not enabled in Settings</string>
     <string name="retry">Retry</string>
     <string name="network_error_message">%s. \nTap on the image below to retry</string>
     <string name="news">News</string>
