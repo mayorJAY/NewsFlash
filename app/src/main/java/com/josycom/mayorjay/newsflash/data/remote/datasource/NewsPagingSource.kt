@@ -8,6 +8,7 @@ import com.josycom.mayorjay.newsflash.data.remote.service.NewsApiService
 import com.josycom.mayorjay.newsflash.util.Constants
 import retrofit2.HttpException
 import java.io.IOException
+import java.net.UnknownHostException
 import javax.inject.Inject
 
 class NewsPagingSource @Inject constructor(
@@ -46,10 +47,13 @@ class NewsPagingSource @Inject constructor(
                 LoadResult.Error(Throwable(message = response.message))
             }
         } catch (exception: IOException) {
+            if (exception is UnknownHostException) {
+                return LoadResult.Error(Throwable(message = "Something is not right! Please check your network"))
+            }
             LoadResult.Error(exception)
         } catch (exception: HttpException) {
             if (exception.response()?.code() == 401) {
-                return LoadResult.Error(Throwable(message = "Your API key is invalid or incorrect. Check your key, or go to https://newsapi.org to create a free API key."))
+                return LoadResult.Error(Throwable(message = "Your API key is invalid or incorrect. Check your key, or go to https://newsapi.org to create a free API key"))
             }
             LoadResult.Error(exception)
         }
