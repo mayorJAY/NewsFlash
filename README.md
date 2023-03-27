@@ -1,12 +1,12 @@
 <p align="center">
-  <img src="app_icon.png" title="App Logo">
+  <img src="media/app_icon.png" title="App Logo">
 </p>
 
 # NewsFlash
 
 NewsFlash is a News reading Android Application that fetches and displays a list of news headlines published by a single source. The App fetches the data from [News API](https://newsapi.org/). It supports multiple flavors, each flavor represents a news source, building each flavor displays the news from the configured source, this means more flavors can be added easily. It also performs Fingerprint Login when run on devices that support that feature. It is implemented using Multi-flavor, Clean Architecture, Model-View-ViewModel (MVVM) pattern and uses Modern Android Development pattern and libraries. Adequate Unit Tests were also implemented in the codebase.
 
-Get the sample [APK here](https://drive.google.com/file/d/1SIrvEX7bfnJOqHvqFMT5NNYssqN-8iRq/view?usp=share_link)
+Get the sample [APK here](https://github.com/mayorJAY/NewsFlash/blob/main/media/NewsFlash.apk)
 
 ## Project Characteristics
 
